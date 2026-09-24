@@ -1,0 +1,32 @@
+prefix: "&8[&6&lMetroVerse&r&8] &r&8» &r"
+
+no_player: "{prefix}&cDu musst ein Spieler sein, um &e/moneydrop &czu benutzen!"
+
+invalid_amount: "{prefix}&cDu musst eine gültige Zahl eingeben!"
+
+minimum_amount: "{prefix}&cDu kannst keinen MoneyDrop unter &l5000 Coins&r&c erstellen!"
+
+not_enough_money: "{prefix}&cDu hast nicht genug Coins! Dir fehlen noch &l{missing} Coins&r&c."
+
+too_few_players: "{prefix}&cEs müssen mindestens &e5 Spieler &conline sein!"
+
+drop_success:
+drop_header: "&6Der MoneyDrop wurde gestartet!"
+drop_players: "&8» &7Teilnehmende Spieler: &e{players}"
+drop_receive: "&8» &7Jeder erhält: &a{amount} Coins"
+drop_thanks: "&3Vielen Dank an &c{player} &3für den MoneyDrop von &a{amount} Coins&3! &c<3"
+
+usage: |
+  {prefix}&3Mit diesem Command kannst du &2Coins &3an andere Spieler verteilen.
+
+  &3Bedingungen:
+  &8» &emin. 5000 Coins
+  &8» &emindestens 5 Spieler online
+  &8» &eDu selbst und OPs werden ausgeschlossen
+
+  &6[Verwendung]
+  &3/moneydrop 5000
+
+  &7Bei 5 Empfängern erhält jeder &a1000 Coins&7.
+
+  {prefix}&3Dein Kontostand: &2{balance} Coins

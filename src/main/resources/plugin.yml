@@ -4,3 +4,16 @@ version: ${project.version}
 api: 3.0.0
 author: HannesTheDev
 description: Make a MoneyDrop on your Server
+depend:
+  - LlamaEconomy
+
+permissions:
+  moneydrop.command:
+    description: Allows the player to use /moneydrop
+    default: true
+
+commands:
+  moneydrop:
+    description: Make a money drop
+    usage: "/moneydrop <Money>"
+    permission: moneydrop.command
