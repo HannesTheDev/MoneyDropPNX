@@ -27,16 +27,10 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
         this.setPermission("moneydrop.command");
         this.setUsage("§c/moneydrop [number]");
         this.setAliases(new String[]{"md","moneyd", "mdrop"});
-
-        this.commandParameters.clear();
     }
 
     @Override
-    public boolean execute(
-            CommandSender sender,
-            String commandLabel,
-            String[] args
-    ) {
+    public boolean execute(CommandSender sender, String commandLabel, String[] args) {
 
         /*
          * Nur Spieler dürfen /moneydrop benutzen

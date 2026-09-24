@@ -1,16 +1,15 @@
 prefix: "&8[&6&lMetroVerse&r&8] &r&8» &r"
 
-no_player: "{prefix}&cDu musst ein Spieler sein, um &e/moneydrop &czu benutzen!"
+no_player: "&cDu musst ein Spieler sein, um &e/moneydrop &czu benutzen!"
 
-invalid_amount: "{prefix}&cDu musst eine gültige Zahl eingeben!"
+invalid_amount: "&cDu musst eine gültige Zahl eingeben!"
 
-minimum_amount: "{prefix}&cDu kannst keinen MoneyDrop unter &l5000 Coins&r&c erstellen!"
+minimum_amount: "&cDu kannst keinen MoneyDrop unter &l5000 Coins&r&c erstellen!"
 
-not_enough_money: "{prefix}&cDu hast nicht genug Coins! Dir fehlen noch &l{missing} Coins&r&c."
+not_enough_money: "&cDu hast nicht genug Coins! Dir fehlen noch &l{missing} Coins&r&c."
 
-too_few_players: "{prefix}&cEs müssen mindestens &e5 Spieler &conline sein!"
+too_few_players: "&cEs müssen mindestens &e5 Spieler &conline sein!"
 
-drop_success:
 drop_header: "&6Der MoneyDrop wurde gestartet!"
 drop_players: "&8» &7Teilnehmende Spieler: &e{players}"
 drop_receive: "&8» &7Jeder erhält: &a{amount} Coins"
