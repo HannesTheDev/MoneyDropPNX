@@ -17,10 +17,7 @@ public class MoneyDropPlugin extends PluginBase {
 
         saveResource("messages.yml");
 
-        messages = new Config(
-                getDataFolder() + "/messages.yml",
-                Config.YAML
-        );
+        messages = new Config(getDataFolder() + "/messages.yml", Config.YAML);
 
         this.getLogger().info(TextFormat.DARK_GREEN + "MoneyDrop succsessfully enabled!");
         this.getServer().getCommandMap().register("moneydrop", new MoneyDropCommand());
@@ -37,7 +34,6 @@ public class MoneyDropPlugin extends PluginBase {
             return "§cMessage not found: " + key;
         }
 
-        return message
-                .replace("&", "§");
+        return message.replace("&", "§");
     }
 }
