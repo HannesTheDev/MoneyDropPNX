@@ -17,7 +17,7 @@ drop_receive: "&8» &7Jeder erhält: &a{amount} Coins"
 drop_thanks: "&3Vielen Dank an &c{player} &3für den MoneyDrop von &a{amount} Coins&3! &c<3"
 
 usage: |
-  {prefix}&3Mit diesem Command kannst du &2Coins &3an andere Spieler verteilen.
+  &3Mit diesem Command kannst du &2Coins &3an andere Spieler verteilen.
 
   &3Bedingungen:
   &8» &emin. 5000 Coins
@@ -29,4 +29,4 @@ usage: |
 
   &7Bei 5 Empfängern erhält jeder &a1000 Coins&7.
 
-  {prefix}&3Dein Kontostand: &2{balance} Coins
+  &3Dein Kontostand: &2{balance} Coins

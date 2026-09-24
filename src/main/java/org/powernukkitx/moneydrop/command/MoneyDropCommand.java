@@ -56,7 +56,7 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
 
             double balance = economy.getMoney(player);
 
-            sender.sendMessage(prefix + plugin.getMessage("usage"));
+            sender.sendMessage(prefix + plugin.getMessage("usage").replace("{balance}", format(balance)));
             return true;
         }
 
