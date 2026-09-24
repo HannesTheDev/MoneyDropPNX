@@ -1,0 +1,6 @@
+name: MoneyDrop
+main: org.powernukkitx.moneydrop.MoneyDropPlugin
+version: ${project.version}
+api: 3.0.0
+author: HannesTheDev
+description: Make a MoneyDrop on your Server
