@@ -25,7 +25,6 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
 
         this.setDescription("Make a money drop");
         this.setPermission("moneydrop.command");
-        this.setUsage("§c/moneydrop [number]");
         this.setAliases(new String[]{"md","moneyd", "mdrop"});
     }
 

@@ -22,6 +22,10 @@
             <url>https://repo.maven.apache.org/maven2/</url>
         </repository>
         <repository>
+            <id>jitpack.io</id>
+            <url>https://www.jitpack.io</url>
+        </repository>
+        <repository>
             <id>PowerNukkitX-releases</id>
             <name>PowerNukkitX Repository</name>
             <url>https://repo.powernukkitx.org/releases</url>
