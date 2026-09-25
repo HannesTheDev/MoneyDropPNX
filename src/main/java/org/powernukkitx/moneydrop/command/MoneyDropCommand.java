@@ -32,9 +32,6 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
 
-        /*
-         * Nur Spieler dürfen /moneydrop benutzen
-         */
         String prefix = "§8[§6§lMetroVerse§r§8] §r§8» §r";
         if (!sender.isPlayer()) {
             sender.sendMessage(prefix + plugin.getMessage("no_player"));
@@ -43,9 +40,6 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
 
         Player player = (Player) sender;
 
-        /*
-         * Kein Betrag angegeben
-         */
         if (args.length == 0) {
 
             double balance = economy.getMoney(player);
@@ -54,9 +48,6 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
             return true;
         }
 
-        /*
-         * Betrag aus Argument lesen
-         */
         double amount;
 
         try {
@@ -67,26 +58,18 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
             return true;
         }
 
-        /*
-         * Keine negativen oder 0 Coins
-         */
         if (amount <= 0) {
 
             sender.sendMessage(prefix + plugin.getMessage("invalid_amount"));
             return true;
         }
 
-        /*
-         * Mindestbetrag: 5000 Coins
-         */
         if (amount < 5000) {
             sender.sendMessage(prefix + plugin.getMessage("minimum_amount"));
             return true;
         }
 
-        /*
-         * Kontostand überprüfen
-         */
+
         double senderMoney = economy.getMoney(player);
         if (senderMoney < amount) {
             double missing = amount - senderMoney;
@@ -94,27 +77,13 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
             return true;
         }
 
-        /*
-         * Alle Online-Spieler holen.
-         *
-         * PNX 3.0.0 gibt hier eine
-         * Map<UUID, Player> zurück.
-         */
         Map<UUID, Player> onlinePlayers = plugin.getServer().getOnlinePlayers();
 
-        /*
-         * Mindestens 5 Spieler online
-         */
         if (onlinePlayers.size() < 5) {
             sender.sendMessage(prefix + plugin.getMessage("too_few_players"));
             return true;
         }
 
-        /*
-         * Empfänger bestimmen.
-         *
-         * Der Ersteller und OPs bekommen kein Geld.
-         */
         List<Player> receivers = new ArrayList<>();
         for (Player online : onlinePlayers.values()) {
             if (online.equals(player)) {
@@ -128,34 +97,20 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
             receivers.add(online);
         }
 
-        /*
-         * Keine Empfänger vorhanden
-         */
         if (receivers.isEmpty()) {
             sender.sendMessage(plugin.getMessage("too_few_players"));
             return true;
         }
 
-        /*
-         * Geld gleichmäßig verteilen
-         */
         double moneyPerPlayer = amount / receivers.size();
 
-        /*
-         * Geld vom Ersteller abziehen
-         */
         economy.reduceMoney(player, amount);
 
-        /*
-         * Geld an Empfänger verteilen
-         */
         for (Player receiver : receivers) {
             economy.addMoney(receiver, moneyPerPlayer);
         }
 
-        /*
-         * Namen der Empfänger sammeln
-         */
+
         List<String> names = new ArrayList<>();
         for (Player receiver : receivers) {
             names.add(receiver.getName());
@@ -163,9 +118,6 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
 
         String playerNames = String.join(", ", names);
 
-        /*
-         * Nachrichten
-         */
 
         String header = prefix + plugin.getMessage("drop_header");
 
@@ -177,9 +129,7 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
                 .replace("{player}", player.getName())
                         .replace("{amount}", format(amount));
 
-        /*
-         * Broadcast an alle Spieler
-         */
+
         plugin.getServer().broadcastMessage(header
                         + "\n"
                         + players
@@ -191,12 +141,6 @@ public class MoneyDropCommand extends PluginCommand<MoneyDropPlugin> {
         return true;
     }
 
-    /**
-     * Formatiert Zahlen:
-     *
-     * 5000.0 -> 5000
-     * 1250.5 -> 1250.5
-     */
     private String format(double amount) {
 
         if (amount == Math.floor(amount)) {
