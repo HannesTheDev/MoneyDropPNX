@@ -7,7 +7,7 @@ Command | Description | Default | Alias                     | Permissions
 ``/moneydrop`` | ``Make a money drop`` | ``true`` | ``moneyd`` ``mdrop`` ``md`` | ``moneydrop.command``
 
 ## Picture
-<img src="https://github.com/HannesTheDev/MoneyDropPNX/blob/main/moneydroppnx.png"></img> <br>
+<img src="https://github.com/HannesTheDev/MoneyDropPNX/blob/master/moneydroppnx.png"></img> <br>
 
 ## Soon
 - [ ] Other language support
